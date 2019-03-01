@@ -15,7 +15,7 @@ public interface DeptMapper {
      * @param dept
      * @return
      */
-    public void addDept(Dept dept);
+    void addDept(Dept dept);
 
     /**
      * 根据id查找部门
@@ -23,12 +23,12 @@ public interface DeptMapper {
      * @param id
      * @return
      */
-    public Dept findById(@Param("id") Long id);
+    Dept findById(@Param("id") Long id);
 
     /**
      * 查找所有部门
      *
      * @return
      */
-    public List<Dept> findAll();
+    List<Dept> findAll();
 }
