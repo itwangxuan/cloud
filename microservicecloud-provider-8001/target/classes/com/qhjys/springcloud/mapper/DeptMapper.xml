@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qhjys.springcloud.mapper.DeptMapper">
+
+    <!--添加部门-->
+    <insert id="addDept" parameterType="com.qhjys.springcloud.entities.Dept">
+        INSERT INTO dept (dname, db_source)
+        VALUES
+            (#{dName},#{dbSource})
+    </insert>
+
+    <!--根据id查找部门-->
+    <select id="findById" resultType="com.qhjys.springcloud.entities.Dept">
+        select * from Dept where id = #{id}
+    </select>
+
+    <!--查找所有部门-->
+    <select id="findAll" resultType="com.qhjys.springcloud.entities.Dept">
+        select * from Dept
+    </select>
+</mapper>
