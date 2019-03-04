@@ -28,3 +28,7 @@ eureka:
     register-with-eureka: false
     # 是否需要去注册中心检索服务（集群的时候需要设为true）
     fetch-registry: false
+
+swagger:
+  userName: wx
+  password: wangxuan

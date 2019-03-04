@@ -29,24 +29,24 @@ public class SwaggerConfig {
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.qhjys.springcloud.controller"))
                 .paths(PathSelectors.any())
-                .build()
-                .globalOperationParameters(headerToken());
+                .build();
+//                .globalOperationParameters(headerToken());
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("部门服务接口")
                 .description("swagger")
-                .termsOfServiceUrl("www.jakinoy.com")
+                .termsOfServiceUrl("")
                 .version("1.0.0")
                 .build();
     }
 
-    private List<Parameter> headerToken() {
-        ParameterBuilder parameterBuilder = new ParameterBuilder();
-        parameterBuilder.name("token").description("token").modelRef(new ModelRef("string")).parameterType("header").required(false).build();
-        List<Parameter> parameters = new ArrayList<>();
-        parameters.add(parameterBuilder.build());
-        return parameters;
-    }
+//    private List<Parameter> headerToken() {
+//        ParameterBuilder parameterBuilder = new ParameterBuilder();
+//        parameterBuilder.name("token").description("token").modelRef(new ModelRef("string")).parameterType("header").required(false).build();
+//        List<Parameter> parameters = new ArrayList<>();
+//        parameters.add(parameterBuilder.build());
+//        return parameters;
+//    }
 }

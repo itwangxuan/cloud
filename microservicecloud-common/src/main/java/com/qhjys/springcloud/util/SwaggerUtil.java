@@ -8,9 +8,9 @@
 //@Component
 //public class SwaggerUtil {
 //
-//    @Value("${qhjys.swagger.userName}")
+//    @Value("${swagger.userName}")
 //    private String swaggerUserName;
-//    @Value("${qhjys.swagger.password}")
+//    @Value("${swagger.password}")
 //    private String swaggerPassword;
 //
 //    public boolean validSwagger(String userName, String password) {
