@@ -3,5 +3,6 @@ D:\workspace_idea\microservicecloud\microservicecloud-provider-8001\src\main\jav
 D:\workspace_idea\microservicecloud\microservicecloud-provider-8001\src\main\java\com\qhjys\springcloud\config\SwaggerConfig.java
 D:\workspace_idea\microservicecloud\microservicecloud-provider-8001\src\main\java\com\qhjys\springcloud\config\ListenerConfig.java
 D:\workspace_idea\microservicecloud\microservicecloud-provider-8001\src\main\java\com\qhjys\springcloud\ProviderApplication8001.java
+D:\workspace_idea\microservicecloud\microservicecloud-provider-8001\src\main\java\com\qhjys\springcloud\controller\SwaggerController.java
 D:\workspace_idea\microservicecloud\microservicecloud-provider-8001\src\main\java\com\qhjys\springcloud\mapper\DeptMapper.java
 D:\workspace_idea\microservicecloud\microservicecloud-provider-8001\src\main\java\com\qhjys\springcloud\controller\DeptController.java

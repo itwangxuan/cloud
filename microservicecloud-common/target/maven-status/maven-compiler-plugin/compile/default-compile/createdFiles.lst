@@ -9,4 +9,3 @@ com\qhjys\springcloud\util\ValiCodeUtil.class
 com\qhjys\springcloud\exception\ValidationException.class
 com\qhjys\springcloud\util\CSVUtil.class
 com\qhjys\springcloud\util\FileUtil.class
-com\qhjys\springcloud\util\SwaggerUtil.class
