@@ -9,6 +9,6 @@ eureka:
     register-with-eureka: false
     # 是否需要去注册中心检索服务（集群的时候需要设为true）
     fetch-registry: false
-    # 设置与Eureka Server交互的地址查询服务和注册服务
+    # 设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

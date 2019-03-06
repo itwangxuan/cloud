@@ -229,38 +229,49 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>
+                        <delimiter>$</delimiter>
+                    </delimiters>
+                </configuration>
+            </plugin>
+        </plugins>
 
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${maven-compiler-plugin.version}</version>
-                    <configuration>
-                        <source>${maven.compile.source}</source>
-                        <target>${maven.compile.target}</target>
-                        <encoding>${project.build.sourceEncoding}</encoding>
-                    </configuration>
-                </plugin>
+        <!--<pluginManagement>-->
+            <!--<plugins>-->
+                <!--<plugin>-->
+                    <!--<groupId>org.apache.maven.plugins</groupId>-->
+                    <!--<artifactId>maven-compiler-plugin</artifactId>-->
+                    <!--<version>${maven-compiler-plugin.version}</version>-->
+                    <!--<configuration>-->
+                        <!--<source>${maven.compile.source}</source>-->
+                        <!--<target>${maven.compile.target}</target>-->
+                        <!--<encoding>${project.build.sourceEncoding}</encoding>-->
+                    <!--</configuration>-->
+                <!--</plugin>-->
 
-                <plugin>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>${spring-boot.version}</version>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>repackage</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <layout>ZIP</layout>
-                        <fork>true</fork>
-                        <addResources>true</addResources>
-                        <outputDirectory>${package.output.directory}</outputDirectory>
-                    </configuration>
-                </plugin>
+                <!--<plugin>-->
+                    <!--<groupId>org.springframework.boot</groupId>-->
+                    <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+                    <!--<version>${spring-boot.version}</version>-->
+                    <!--<executions>-->
+                        <!--<execution>-->
+                            <!--<goals>-->
+                                <!--<goal>repackage</goal>-->
+                            <!--</goals>-->
+                        <!--</execution>-->
+                    <!--</executions>-->
+                    <!--<configuration>-->
+                        <!--<layout>ZIP</layout>-->
+                        <!--<fork>true</fork>-->
+                        <!--<addResources>true</addResources>-->
+                        <!--<outputDirectory>${package.output.directory}</outputDirectory>-->
+                    <!--</configuration>-->
+                <!--</plugin>-->
 
                 <!--<plugin>-->
                     <!--<groupId>org.apache.maven.plugins</groupId>-->
@@ -281,8 +292,8 @@
                         <!--<outputDirectory>${package.dependency.output.directory}</outputDirectory>-->
                     <!--</configuration>-->
                 <!--</plugin>-->
-            </plugins>
-        </pluginManagement>
+            <!--</plugins>-->
+        <!--</pluginManagement>-->
     </build>
 
 </project>

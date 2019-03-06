@@ -24,7 +24,15 @@ spring:
 
 eureka:
   client:
-    # 代表不向注册中心注册自己（集群的时候需要设为true）
-    register-with-eureka: false
-    # 是否需要去注册中心检索服务（集群的时候需要设为true）
-    fetch-registry: false
+    # 客户端注册进eureka列表内
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: microservicecloud-dept8001
+    prefer-ip-address: true  # 访问路径可以显示ip地址
+
+info:
+  app.name: qhjys-microservicecloud
+  company.name: www.jysp2p.com
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
