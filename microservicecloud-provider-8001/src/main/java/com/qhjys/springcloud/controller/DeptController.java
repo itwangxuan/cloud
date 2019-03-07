@@ -32,15 +32,18 @@ public class DeptController {
         }
     }
 
-    @GetMapping(value = "/get")
-    public Response get(@PathVariable("id") Long id){
-        try {
-            Dept dept = deptService.get(id);
-            return Response.create().body(dept);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return Response.create().error(e.getMessage());
-        }
+    @GetMapping(value = "/get/{id}")
+    @ResponseBody
+    public Dept get(@PathVariable("id") Long id){
+        Dept dept = deptService.get(id);
+        return dept;
+//        try {
+//            Dept dept = deptService.get(id);
+//            return Response.create().body(dept);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return Response.create().error(e.getMessage());
+//        }
 
     }
 
@@ -54,6 +57,5 @@ public class DeptController {
             return Response.create().error(e.getMessage());
         }
     }
-
 
 }
