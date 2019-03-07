@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 public class ConfigBeans {
 
     @Bean
-//    @LoadBalanced  //springcloud Ribbon是基于Netflix Ribbon实现的一套客户端，负载均衡的工具
+    @LoadBalanced  //springcloud Ribbon是基于Netflix Ribbon实现的一套客户端，负载均衡的工具
     public RestTemplate getRestTemplate(){
         return new RestTemplate();
     }
