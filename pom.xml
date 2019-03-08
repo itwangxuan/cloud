@@ -11,10 +11,13 @@
         <module>microservicecloud-api</module>
         <module>microservicecloud-provider-8001</module>
         <module>microservicecloud-common</module>
-        <module>microservicecloud-consumer-80</module>
+        <module>microservicecloud-consumer-dept-80</module>
         <module>microservicecloud-eureka-7001</module>
         <module>microservicecloud-eureka-7002</module>
         <module>microservicecloud-eureka-7003</module>
+        <module>microservicecloud-provider-8002</module>
+        <module>microservicecloud-provider-8003</module>
+        <module>microservicecloud-consumer-dept-feign</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -1,0 +1,39 @@
+server:
+  port: 8003
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.qhjys.springcloud.entities
+  mapper-locations: classpath:com/qhjys/springcloud/mapper/*.xml
+
+spring:
+  application:
+    name: microservicecloud-dept
+  datasource:
+    url: jdbc:mysql://localhost:3306/test-cloud3?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&useLegacyDatetimeCode=false
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: localhost
+    password:
+    port: 6379
+    timeout: 5000ms
+    database: 4
+
+eureka:
+  client:
+    # 客户端注册进eureka列表内
+    service-url:
+     # defaultZone: http://localhost:7001/eureka   (单机)
+     defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: microservicecloud-dept8003
+    prefer-ip-address: true  # 访问路径可以显示ip地址
+
+info:
+  app.name: qhjys-microservicecloud
+  company.name: www.jysp2p.com
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
