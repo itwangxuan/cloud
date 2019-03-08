@@ -1,7 +1,6 @@
 package com.qhjys.springcloud.service;
 
 import com.qhjys.springcloud.entities.Dept;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -21,7 +20,7 @@ public interface DeptService {
      * @param id
      * @return
      */
-    public Dept get(@Param("id") Long id);
+    public Dept get(Long id);
 
     /**
      * 查找所有部门

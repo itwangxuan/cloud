@@ -21,7 +21,7 @@ public interface DeptService {
      * @param id
      * @return
      */
-    public Dept get(@Param("id") Long id);
+    public Dept get(Long id);
 
     /**
      * 查找所有部门

@@ -1,10 +1,10 @@
 package com.qhjys.springcloud.controller;
 
 import com.qhjys.springcloud.entities.Dept;
+import com.qhjys.springcloud.service.DeptCilentService;
 import com.qhjys.springcloud.util.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -12,16 +12,13 @@ import java.util.List;
 @RestController
 public class DeptController_Consumer {
 
-//    private static final String REST_URL_PREFIS = "http://localhost:8001"; //eureka之前
-    private static final String REST_URL_PREFIS = "http://microservicecloud-dept";
-
     @Autowired
-    private RestTemplate restTemplate;
+    private DeptCilentService deptCilentService;
 
     @PostMapping(value = "/add")
     public Response add(Dept dept) {
         try {
-            restTemplate.postForObject(REST_URL_PREFIS + "/provider/dept/add", dept, Boolean.class);
+            this.deptCilentService.add(dept);
             return Response.create().success();
         } catch (Exception e) {
             e.printStackTrace();
@@ -32,7 +29,7 @@ public class DeptController_Consumer {
     @GetMapping(value = "/get/{id}")
     public Response get(@PathVariable("id") Long id) {
         try {
-            Dept dept = restTemplate.getForObject(REST_URL_PREFIS + "/provider/dept/get/" + id, Dept.class);
+            Dept dept = this.deptCilentService.get(id);
             return Response.create().body(dept);
         } catch (Exception e) {
             e.printStackTrace();
@@ -43,12 +40,13 @@ public class DeptController_Consumer {
     @GetMapping(value = "/list")
     public Response list() {
         try {
-            List<Dept> list = restTemplate.getForObject(REST_URL_PREFIS + "/provider/dept/list", List.class);
+            List<Dept> list = this.deptCilentService.list();
             return Response.create().body(list);
         } catch (Exception e) {
             e.printStackTrace();
             return Response.create().error(e.getMessage());
         }
     }
+
 
 }

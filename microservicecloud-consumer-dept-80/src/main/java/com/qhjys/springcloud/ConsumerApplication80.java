@@ -8,7 +8,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.ribbon.RibbonClient;
 
 @SpringBootApplication
-//@EnableDiscoveryClient  //服务发现
+//@EnableDiscoveryClient  //服务发现  (？不加也能发现？)
 @EnableEurekaClient  //服务注册
 //在启动改微服务的时候就能去加载我们的自定义Ribbon配置类，从而使配置生效
 @RibbonClient(name = "microservicecloud-dept", configuration = MyselfRule.class)  //注释掉以后不加载ribbon
