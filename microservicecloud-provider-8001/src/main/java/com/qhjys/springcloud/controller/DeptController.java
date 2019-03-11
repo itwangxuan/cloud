@@ -23,13 +23,8 @@ public class DeptController {
 
     @PostMapping(value = "/add")
     public Response add(Dept dept){
-        try {
-            deptService.add(dept);
-            return Response.create().success();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return Response.create().error(e.getMessage());
-        }
+        deptService.add(dept);
+        return Response.create().success();
     }
 
     @GetMapping(value = "/get/{id}")
@@ -37,25 +32,31 @@ public class DeptController {
     public Dept get(@PathVariable("id") Long id){
         Dept dept = deptService.get(id);
         return dept;
+    }
+
+    /**
+     * Error while extracting response for type [java.util.List<com.qhjys.springcloud.entities.Dept>]
+     * and content type [application/json;charset=UTF-8];
+     * nested exception is org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error:
+     * Cannot deserialize instance of `java.util.ArrayList` out of START_OBJECT token;
+     * nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot
+     * deserialize instance of `java.util.ArrayList` out of START_OBJECT token at
+     * [Source: (PushbackInputStream); line: 1, column: 1]
+     */
+//    @GetMapping(value = "/list")
+//    public Response list(){
 //        try {
-//            Dept dept = deptService.get(id);
-//            return Response.create().body(dept);
+//            List<Dept> list = deptService.list();
+//            return Response.create().body(list);
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //            return Response.create().error(e.getMessage());
 //        }
-
-    }
+//    }
 
     @GetMapping(value = "/list")
-    public Response list(){
-        try {
-            List<Dept> list = deptService.list();
-            return Response.create().body(list);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return Response.create().error(e.getMessage());
-        }
+    public List list() {
+        List<Dept> list = deptService.list();
+        return list;
     }
-
 }

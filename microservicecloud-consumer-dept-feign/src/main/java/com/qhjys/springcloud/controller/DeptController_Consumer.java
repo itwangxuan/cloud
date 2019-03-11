@@ -4,6 +4,7 @@ import com.qhjys.springcloud.entities.Dept;
 import com.qhjys.springcloud.service.DeptCilentService;
 import com.qhjys.springcloud.util.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,7 +27,7 @@ public class DeptController_Consumer {
         }
     }
 
-    @GetMapping(value = "/get/{id}")
+    @GetMapping(value = "/get/{id}",produces = MediaType.APPLICATION_JSON_UTF8_VALUE) //json
     public Response get(@PathVariable("id") Long id) {
         try {
             Dept dept = this.deptCilentService.get(id);
@@ -47,6 +48,5 @@ public class DeptController_Consumer {
             return Response.create().error(e.getMessage());
         }
     }
-
 
 }
