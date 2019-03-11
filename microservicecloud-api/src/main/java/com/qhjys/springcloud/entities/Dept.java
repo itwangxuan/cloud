@@ -23,5 +23,5 @@ public class Dept implements Serializable{
     private String dName;
 
     @ApiModelProperty(value = "数据源")
-    private String dbSource;
+    private String db_source;
 }

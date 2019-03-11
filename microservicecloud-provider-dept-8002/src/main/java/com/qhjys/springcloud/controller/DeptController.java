@@ -28,7 +28,6 @@ public class DeptController {
     }
 
     @GetMapping(value = "/get/{id}")
-    @ResponseBody
     public Dept get(@PathVariable("id") Long id) {
         Dept dept = deptService.get(id);
         return dept;
