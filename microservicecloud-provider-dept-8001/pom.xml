@@ -9,13 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>microservicecloud-provider-8002</artifactId>
+    <artifactId>microservicecloud-provider-dept-8001</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>com.qhjys.springcloud</groupId>
-            <artifactId>microservicecloud-api</artifactId>
-            <version>${project.version}</version>
+                <groupId>com.qhjys.springcloud</groupId>
+                <artifactId>microservicecloud-api</artifactId>
+                <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.qhjys.springcloud</groupId>
