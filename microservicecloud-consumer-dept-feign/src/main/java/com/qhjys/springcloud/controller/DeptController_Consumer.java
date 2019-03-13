@@ -18,16 +18,14 @@ public class DeptController_Consumer {
 
     @PostMapping(value = "/add")
     public Response add(Dept dept) {
-        try {
-            this.deptCilentService.add(dept);
+        boolean flag = this.deptCilentService.add(dept);
+        if (flag) {
             return Response.create().success();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return Response.create().error(e.getMessage());
         }
+        return Response.create().error();
     }
 
-    @GetMapping(value = "/get/{id}",produces = MediaType.APPLICATION_JSON_UTF8_VALUE) //json
+    @GetMapping(value = "/get/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE) //json
     public Response get(@PathVariable("id") Long id) {
         try {
             Dept dept = this.deptCilentService.get(id);

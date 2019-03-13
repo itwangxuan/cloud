@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@FeignClient(value = "microservicecloud-dept")  //开启feign
+//@FeignClient(value = "microservicecloud-dept")  //开启feign
+@FeignClient(value = "microservicecloud-dept",fallbackFactory = DeptCilentServiceFallbackFactory.class)
 @RequestMapping(value = "/provider/dept")
 public interface DeptCilentService {
 
     @PostMapping(value = "/add")
-    public void add(Dept dept);
+    public boolean add(Dept dept);
 
     @GetMapping(value = "/get/{id}")
     public Dept get(@PathVariable("id") Long id);
